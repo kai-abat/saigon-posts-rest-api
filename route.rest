@@ -1,0 +1,59 @@
+POST  http://localhost:3001/api/posts HTTP/1.1
+Content-Type: application/json
+
+{
+  "post": "post 1",
+  "bucket": [{
+    "attachment": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "mediaType": "image",
+    "order": 1
+  },{
+    "attachment": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "mediaType": "image",
+    "order": 2
+  }
+  ]
+}
+
+###
+
+POST  http://localhost:3001/api/posts HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "title 1",
+  "post": "post 1"
+}
+
+###
+
+GET http://localhost:3001/api/posts
+
+
+
+###
+
+PUT http://localhost:3001/api/posts/66a8befe53495271df6c9302
+Content-Type: application/json 
+
+{
+  "title": "title 001",
+  "bucket": [{
+      "attachment": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "order": 1
+    },
+    {
+      "attachment": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "order": 2
+    },{
+      "attachment": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "order": 3
+    }]
+}
+
+###
+
+GET http://localhost:3001/api/posts/66a8befe53495271df6c9302
+
+###
+DELETE  http://localhost:3001/api/posts/66a8befe53495271df6c9302
